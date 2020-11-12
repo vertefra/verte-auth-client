@@ -10,6 +10,6 @@ export const app_set_message = (payload) => {
 	return { type: 'APP_SET_MESSAGE', payload };
 };
 
-export const app_set_auth = (payload) => {
-	return { type: 'APP_SET_AUTH', payload };
+export const app_set_redirect = (payload) => {
+	return { type: 'APP_SET_REDIRECT', payload };
 };

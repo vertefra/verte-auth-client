@@ -1,7 +1,9 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { app_set_auth } from '../actions/appActions';
-import { userInfo_unset } from '../actions/userActions';
+import {
+	userInfo_auth,
+	userInfo_unset,
+} from '../actions/userActions';
 import { AppContext, UserInfoContext } from '../Store';
 
 const Header = ({ history }) => {
@@ -10,7 +12,7 @@ const Header = ({ history }) => {
 
 	const handleLogOut = (ev) => {
 		ev.preventDefault();
-		dispatchAppState(app_set_auth(false));
+		dispatchUserInfo(userInfo_auth(false));
 		dispatchUserInfo(userInfo_unset());
 		history.push('/login');
 	};

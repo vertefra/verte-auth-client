@@ -5,4 +5,5 @@ export const userInfoDefaultState = {
 	token: '',
 	redirectURL: '',
 	key: '',
+	auth: false,
 };

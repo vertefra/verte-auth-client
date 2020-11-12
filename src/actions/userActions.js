@@ -12,6 +12,14 @@ export const userInfo_unset = () => {
 	return { type: 'USERNINFO_UNSET' };
 };
 
+export const userInfo_auth = (payload) => {
+	const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+	userInfo.auth = payload;
+	console.log(userInfo);
+	localStorage.setItem('userInfo', JSON.stringify(userInfo));
+	return { type: 'USERINFO_AUTH', payload };
+};
+
 // FUNCTIONS
 export const loginUser = async ({ email, password }) => {
 	try {

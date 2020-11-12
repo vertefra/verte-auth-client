@@ -5,6 +5,11 @@ export const userInfoReducer = (
 	action = {},
 ) => {
 	switch (action.type) {
+		case 'USERINFO_AUTH':
+			return {
+				...state,
+				auth: action.payload,
+			};
 		case 'USERINFO_SET':
 			return action.payload;
 

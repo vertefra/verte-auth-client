@@ -1,0 +1,21 @@
+@import '../variables.css';
+
+.showcase {
+	display: flex;
+	flex-direction: column;
+}
+
+.showCard {
+	background-color: whitesmoke;
+	margin: var(--sp-1);
+	padding: var(--sp-1) var(--sp-2);
+	box-shadow: 4px 4px 2px var(--col-primary);
+}
+
+.showCardTitle {
+	font-size: var(--fs-3);
+	font-family: var(--WorkSans);
+	font-weight: 400;
+	padding: var(--sp-1) 0;
+	text-decoration: underline;
+}

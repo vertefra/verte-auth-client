@@ -23,10 +23,10 @@ export const appStateReducer = (
 				message: action.payload,
 			};
 
-		case 'APP_SET_AUTH':
+		case 'APP_SET_REDIRECT':
 			return {
 				...state,
-				auth: action.payload,
+				redirect: action.payload,
 			};
 
 		default:

@@ -1,0 +1,8 @@
+@import './variables.css';
+
+.dashboardTitle {
+}
+
+.container {
+	background-color: var(--col-secondary);
+}

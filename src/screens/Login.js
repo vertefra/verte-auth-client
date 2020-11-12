@@ -1,10 +1,13 @@
 import { useContext, useState } from 'react';
 import {
-	app_set_auth,
 	app_set_error,
 	app_set_loading,
 } from '../actions/appActions';
-import { loginUser, userInfo_set } from '../actions/userActions';
+import {
+	loginUser,
+	userInfo_auth,
+	userInfo_set,
+} from '../actions/userActions';
 import Message from '../components/Message';
 import { AppContext, UserInfoContext } from '../Store';
 
@@ -30,9 +33,9 @@ const Login = ({ history }) => {
 		dispatchAppState(app_set_loading(true));
 		const data = await loginUser(credentials);
 		if (data.success) {
-			dispatchAppState(app_set_loading(false));
-			dispatchAppState(app_set_auth(true));
 			dispatchUserInfo(userInfo_set(data));
+			dispatchUserInfo(userInfo_auth(true));
+			dispatchAppState(app_set_loading(false));
 			history.push('/');
 		} else {
 			dispatchAppState(app_set_loading(false));

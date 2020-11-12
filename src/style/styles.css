@@ -1,6 +1,7 @@
 @import './components/forms.css';
 @import './components/message.css';
 @import './components/navbar.css';
+@import './components/showcase.css';
 
 /* FLEX DIRECTIONS */
 
@@ -46,4 +47,29 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+}
+
+/* Container */
+
+.container {
+	border: 1px solid black;
+	padding: var(--sp-3);
+	width: 100%;
+	display: flex;
+}
+
+/* HEADERS */
+
+.mainHeader {
+	font-family: var(--WorkSans);
+	font-weight: 600;
+	text-decoration: underline;
+	text-transform: capitalize;
+	color: whitesmoke;
+	padding: var(--sp-1) var(--sp-6);
+	border-radius: 15px;
+}
+
+.secondHeader {
+	font-family: var(--Poppins);
 }
