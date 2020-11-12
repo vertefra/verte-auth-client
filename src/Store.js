@@ -7,20 +7,20 @@ import { userInfoReducer } from './reducers/userReducers.js';
 
 const Store = ({ children }) => {
 	// appState reducer
-	const [appState, appStateDispatch] = useReducer(
+	const [appState, dispatchAppState] = useReducer(
 		appStateReducer,
 		appDefaultState,
 	);
 
 	// userInfo reducer
-	const [userInfo, userInfoDispatch] = useReducer(
+	const [userInfo, dispatchUserInfo] = useReducer(
 		userInfoReducer,
 		userInfoDefaultState,
 	);
 
 	return (
-		<AppContext.Provider value={[appState, appStateDispatch]}>
-			<UserInfoContext.Provider value={[userInfo, userInfoDispatch]}>
+		<AppContext.Provider value={[appState, dispatchAppState]}>
+			<UserInfoContext.Provider value={[userInfo, dispatchUserInfo]}>
 				{children}
 			</UserInfoContext.Provider>
 		</AppContext.Provider>

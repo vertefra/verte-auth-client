@@ -1,6 +1,8 @@
 export const userInfoDefaultState = {
 	name: '',
 	email: '',
-	_id: '',
+	ID: '',
 	token: '',
+	redirectURL: '',
+	key: '',
 };

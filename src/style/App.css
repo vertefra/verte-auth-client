@@ -1,0 +1,9 @@
+@import './styles.css';
+
+* {
+	padding: 0;
+	margin: 0;
+	border: none;
+	text-decoration: none;
+	list-style-type: none;
+}

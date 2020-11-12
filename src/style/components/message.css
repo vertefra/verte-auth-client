@@ -1,0 +1,8 @@
+@import '../variables.css';
+
+.message {
+	padding: var(--sp-1) var(--sp-2);
+	font-family: var(--Poppins);
+	font-weight: 800;
+	border-radius: 8px;
+}

@@ -1,0 +1,55 @@
+@import '../variables.css';
+
+/* Form */
+
+.form {
+	width: 100%;
+	padding: var(--sp-2);
+	display: flex;
+}
+
+.formDataGroup {
+	background-color: var(--col-secondary);
+	width: 300px;
+	display: flex;
+	padding: var(--sp-2) var(--sp-1);
+	margin: var(--sp-1);
+}
+
+.formLabel {
+	width: 40%;
+	text-transform: capitalize;
+	font-family: var(--WorkSans);
+}
+
+.formControll {
+	width: 60%;
+	font-size: var;
+	font-size: var(--fs-2);
+}
+
+/* BUTTONS */
+
+.btn-primary {
+	background-color: var(--col-primary);
+	padding: var(--sp-1) var(--sp-3);
+	margin: var(--sp-1);
+	color: var(--col-neutral);
+	font-family: var(--WorkSans);
+	font-weight: 600;
+	border: none;
+	cursor: pointer;
+	border-radius: 3px;
+	box-shadow: 2px 2px 2px var(--col-secondary);
+	transition: background-color 0.5s;
+	outline: none;
+}
+
+.btn-primary:hover {
+	background-color: var(--col-secondary);
+}
+
+.btn-primary:active {
+	box-shadow: none;
+	outline: none;
+}

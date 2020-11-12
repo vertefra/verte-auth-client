@@ -1,0 +1,28 @@
+@import '../variables.css';
+
+.navbar {
+	width: 100%;
+}
+
+.tabs {
+	margin: 0 var(--sp-2);
+	border-bottom: 1px solid var(--col-primary);
+}
+
+.tab {
+	padding: var(--sp-1) var(--sp-2);
+	border-right: 0.5px solid var(--col-primary);
+	border-left: 0.5px solid var(--col-primary);
+	box-shadow: 2px 2px 2px black;
+	font-family: var(--WorkSans);
+	cursor: pointer;
+	transition: background-color 0.5s;
+}
+
+.tab:hover {
+	background-color: var(--col-secondary);
+}
+
+.tab:active {
+	box-shadow: none;
+}

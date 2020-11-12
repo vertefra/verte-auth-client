@@ -4,7 +4,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Store from './Store';
 
-// import './style/main.scss';
+export const server = 'https://verte-auth-server.herokuapp.com/';
 
 ReactDOM.render(
 	<React.StrictMode>
