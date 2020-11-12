@@ -4,8 +4,12 @@ import { server } from '../index.js';
 // ACTIONS
 export const userInfo_set = (payload) => {
 	localStorage.setItem('userInfo', JSON.stringify(payload));
-	console.log(payload);
 	return { type: 'USERINFO_SET', payload };
+};
+
+export const userInfo_unset = () => {
+	localStorage.removeItem('userInfo');
+	return { type: 'USERNINFO_UNSET' };
 };
 
 // FUNCTIONS

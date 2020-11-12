@@ -9,3 +9,7 @@ export const app_set_error = (payload) => {
 export const app_set_message = (payload) => {
 	return { type: 'APP_SET_MESSAGE', payload };
 };
+
+export const app_set_auth = (payload) => {
+	return { type: 'APP_SET_AUTH', payload };
+};

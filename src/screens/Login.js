@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react';
 import {
+	app_set_auth,
 	app_set_error,
 	app_set_loading,
 } from '../actions/appActions';
@@ -30,8 +31,9 @@ const Login = ({ history }) => {
 		const data = await loginUser(credentials);
 		if (data.success) {
 			dispatchAppState(app_set_loading(false));
+			dispatchAppState(app_set_auth(true));
 			dispatchUserInfo(userInfo_set(data));
-			// history.push('/');
+			history.push('/');
 		} else {
 			dispatchAppState(app_set_loading(false));
 			dispatchAppState(app_set_error(data.error));

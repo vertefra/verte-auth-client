@@ -1,12 +1,19 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { app_set_auth } from '../actions/appActions';
+import { userInfo_unset } from '../actions/userActions';
 import { AppContext, UserInfoContext } from '../Store';
 
-const Header = () => {
-	const [appState] = useContext(AppContext);
-	const [userInfo] = useContext(UserInfoContext);
+const Header = ({ history }) => {
+	const [appState, dispatchAppState] = useContext(AppContext);
+	const [userInfo, dispatchUserInfo] = useContext(UserInfoContext);
 
-	console.log(userInfo);
+	const handleLogOut = (ev) => {
+		ev.preventDefault();
+		dispatchAppState(app_set_auth(false));
+		dispatchUserInfo(userInfo_unset());
+		history.push('/login');
+	};
 
 	return (
 		<header className="row-apart">
@@ -19,10 +26,14 @@ const Header = () => {
 					<Link to="/">
 						<li className="tab">Project Dashboard</li>
 					</Link>
-					<li>{userInfo.email}</li>
 				</ul>
 				{appState.auth ? (
-					<button className="btn-primary">log out</button>
+					<>
+						<h4>{userInfo.email}</h4>
+						<button className="btn-primary" onClick={handleLogOut}>
+							log out
+						</button>
+					</>
 				) : (
 					<>
 						<Link to="/login">
