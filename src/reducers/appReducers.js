@@ -2,7 +2,7 @@ const { appDefaultState } = require('../defaultStates/appStates');
 
 export const appStateReducer = (
 	state = appDefaultState,
-	action = undefined,
+	action = {},
 ) => {
 	switch (action.type) {
 		case 'APP_SET_LOADING':

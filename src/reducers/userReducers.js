@@ -1,12 +1,13 @@
 import { userInfoDefaultState } from '../defaultStates/userStates';
 
-export const userInfoReducer = ({
+export const userInfoReducer = (
 	state = userInfoDefaultState,
-	action = '',
-}) => {
+	action = {},
+) => {
+	console.log(state, action);
 	switch (action.type) {
 		case 'USERINFO_SET':
-			return { ...action.payload };
+			return action.payload;
 
 		case 'USERINFO_DELETE':
 			return userInfoDefaultState;
@@ -18,6 +19,6 @@ export const userInfoReducer = ({
 			};
 
 		default:
-			return state;
+			return {};
 	}
 };

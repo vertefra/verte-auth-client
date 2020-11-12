@@ -1,4 +1,4 @@
-import { useContext, useReducer, useState } from 'react';
+import { useContext, useState } from 'react';
 import {
 	app_set_error,
 	app_set_loading,
@@ -31,7 +31,7 @@ const Login = ({ history }) => {
 		if (data.success) {
 			dispatchAppState(app_set_loading(false));
 			dispatchUserInfo(userInfo_set(data));
-			history.push('/');
+			// history.push('/');
 		} else {
 			dispatchAppState(app_set_loading(false));
 			dispatchAppState(app_set_error(data.error));

@@ -7,6 +7,7 @@ import { userInfoReducer } from './reducers/userReducers.js';
 
 const Store = ({ children }) => {
 	// appState reducer
+
 	const [appState, dispatchAppState] = useReducer(
 		appStateReducer,
 		appDefaultState,
@@ -26,8 +27,8 @@ const Store = ({ children }) => {
 		</AppContext.Provider>
 	);
 };
+export const UserInfoContext = createContext(userInfoDefaultState);
 
 export const AppContext = createContext(appDefaultState);
-export const UserInfoContext = createContext(userInfoDefaultState);
 
 export default Store;
