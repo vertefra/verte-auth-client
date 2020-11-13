@@ -27,6 +27,9 @@ const Dashboard = () => {
 
 	return (
 		<div className="container column">
+			{appState.error && (
+				<Message variant="warning" message={appState.error} />
+			)}
 			<h1 className="mainHeader">dashboard</h1>
 			<div>
 				{userInfo.auth ? (

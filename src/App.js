@@ -3,7 +3,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Dashboard from './screens/Dashboard';
 import Login from './screens/Login';
-import Store, { AppContext } from './Store';
+import Settings from './screens/Settings';
+import { AppContext } from './Store';
 
 import './style/App.css';
 
@@ -20,6 +21,7 @@ function App() {
 						<Header />
 						<Route path="/" component={Dashboard} exact></Route>
 						<Route path="/login" component={Login}></Route>
+						<Route path="/settings" component={Settings}></Route>
 					</>
 				)}
 			</BrowserRouter>

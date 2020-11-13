@@ -6,7 +6,6 @@ import {
 	app_set_message,
 } from '../actions/appActions';
 import { AppContext } from '../Store';
-import Message from './Message';
 
 const AddAccount = () => {
 	const [appState, dispatchAppState] = useContext(AppContext);
@@ -31,6 +30,7 @@ const AddAccount = () => {
 		);
 		if (data.success) {
 			console.log(data);
+			dispatchAppState(app_set_error(''));
 			dispatchAppState(app_set_loading(false));
 			dispatchAppState(app_set_message('Account Added!'));
 		} else {
@@ -43,10 +43,6 @@ const AddAccount = () => {
 	return (
 		<div className="container column">
 			<h2 className="secondHeader">Add an account</h2>
-			{appState.message && <Message message={appState.message} />}
-			{appState.error && (
-				<Message message={appState.error} variant="warning" />
-			)}
 			<form className="form column">
 				<div className="formDataGroup">
 					<label className="formLabel">Username</label>

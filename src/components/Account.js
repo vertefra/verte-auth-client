@@ -3,7 +3,6 @@ import React from 'react';
 const Account = ({ account }) => {
 	const rawTime = new Date(account.CreatedAt);
 
-	console.log(rawTime);
 	const timestamp = rawTime.toLocaleString('En-Us');
 
 	return (

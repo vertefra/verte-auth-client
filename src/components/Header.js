@@ -4,17 +4,16 @@ import {
 	userInfo_auth,
 	userInfo_unset,
 } from '../actions/userActions';
-import { AppContext, UserInfoContext } from '../Store';
+import { UserInfoContext } from '../Store';
 
 const Header = ({ history }) => {
-	const [appState, dispatchAppState] = useContext(AppContext);
 	const [userInfo, dispatchUserInfo] = useContext(UserInfoContext);
 
 	const handleLogOut = (ev) => {
 		ev.preventDefault();
 		dispatchUserInfo(userInfo_auth(false));
 		dispatchUserInfo(userInfo_unset());
-		history.push('/login');
+		localStorage.removeItem('accounts');
 	};
 
 	return (
@@ -22,14 +21,14 @@ const Header = ({ history }) => {
 			<div>verte-auth</div>
 			<nav className="navBar row-apart">
 				<ul className="row-spaced tabs">
-					<Link to="/projects">
+					<Link to="/settings">
 						<li className="tab">Project Settings</li>
 					</Link>
 					<Link to="/">
 						<li className="tab">Project Dashboard</li>
 					</Link>
 				</ul>
-				{appState.auth ? (
+				{userInfo.auth ? (
 					<>
 						<h4>{userInfo.email}</h4>
 						<button className="btn-primary" onClick={handleLogOut}>

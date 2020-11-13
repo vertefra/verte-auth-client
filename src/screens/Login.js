@@ -19,8 +19,6 @@ const Login = ({ history }) => {
 		password: '',
 	});
 
-	console.log(userInfo);
-
 	const handleChange = (ev) => {
 		setCredentials({
 			...credentials,
@@ -35,6 +33,7 @@ const Login = ({ history }) => {
 		if (data.success) {
 			dispatchUserInfo(userInfo_set(data));
 			dispatchUserInfo(userInfo_auth(true));
+			dispatchAppState(app_set_error(''));
 			dispatchAppState(app_set_loading(false));
 			history.push('/');
 		} else {
