@@ -11,6 +11,8 @@ import './style/App.css';
 function App() {
 	const [appState] = useContext(AppContext);
 
+	console.log('NODE_ENV= ', process.env.NODE_ENV);
+
 	return (
 		<div className="App">
 			<BrowserRouter>

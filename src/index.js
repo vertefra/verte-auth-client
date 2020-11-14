@@ -1,10 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import setup from './config';
 import reportWebVitals from './reportWebVitals';
 import Store from './Store';
 
-export const server = 'https://verte-auth-server.herokuapp.com/';
+const config = setup();
+
+export const server = config.go_server;
+
+console.log('server => ', server);
 
 ReactDOM.render(
 	<React.StrictMode>
